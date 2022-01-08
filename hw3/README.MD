@@ -1,5 +1,8 @@
 # HW3
 
+<img width="335" alt="Screen Shot 2022-01-08 at 10 25 13" src="https://user-images.githubusercontent.com/93740120/148635999-a7f7f71f-5e85-46fe-82b9-696e3b0f5123.png">
+
+
 1- Date class’ına 4 adet extension yazılacak
 - .day parametresiyle gün bilgisini döndüren
 - .month parametresiyle ay bilgisini döndüren
