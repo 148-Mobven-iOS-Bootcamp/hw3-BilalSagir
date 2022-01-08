@@ -7,7 +7,7 @@ class CalculatorBrain{
     }
     
     var accumlator = 0.0
-    var historyLabel = ""
+    var historyLabel = "" // LabelText for calculation
     
     enum OperationType{
         case Cons(Double)
@@ -38,7 +38,7 @@ class CalculatorBrain{
                 accumlator = value
                 
             case .SingleInput(let foo):
-                historyLabel = symbol + " " + accumlator.clean
+                historyLabel = symbol + " " + accumlator.clean //update after
                 
                 accumlator = foo(accumlator)
             
@@ -51,7 +51,7 @@ class CalculatorBrain{
             
             case .ClearAll:
                 pending = nil
-                pending?.firstOperand = 0.0
+                pending?.firstOperand = 0.0 // not necessarry
                 accumlator = 0.0
                 historyLabel = "ALL CLEAR"
                 
@@ -62,7 +62,7 @@ class CalculatorBrain{
     func executePendingBinaryOperation(){
         if pending != nil{
             
-            historyLabel = pending!.firstOperand.clean + " " + pending!.operationB + " " + accumlator.clean
+            historyLabel = pending!.firstOperand.clean + " " + pending!.operationB + " " + accumlator.clean. //update later
   
             accumlator = pending!.binaryFunction(pending!.firstOperand, accumlator)
             pending = nil
@@ -87,7 +87,7 @@ class CalculatorBrain{
 }
 
 
-extension Double {
+extension Double { // Extension for clear Double e.g 5.0 = 5 or 5.320 = 5.32
     var clean: String {
         return self.truncatingRemainder(dividingBy: 1) == 0 ? String(format: "%.0f", self) : String(self)
     }
