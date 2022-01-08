@@ -9,7 +9,7 @@ class ViewController: UIViewController
     @IBOutlet var digitButtons: [UIButton]!
     
     
-    func animationLOL(){
+    func animationLOL(){ //animation for SCREEN LABEL
         let animation: CATransition = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.type = CATransitionType.reveal
@@ -22,7 +22,7 @@ class ViewController: UIViewController
     
     var isScreenEmpty = false
     
-    var displayResult: Double {
+    var displayResult: Double { //update for CLEAR double
         get{
             return Double(Screen.text!)!
         }
@@ -34,7 +34,7 @@ class ViewController: UIViewController
     
     @IBAction func touchDigit(_ sender: UIButton)
     {
-        animationLOL()
+        animationLOL() // animation called
         let digit = sender.currentTitle!
         if isScreenEmpty{
             Screen.text = Screen.text! + digit
@@ -69,11 +69,11 @@ class ViewController: UIViewController
 
 
 extension ViewController {
-    override func viewDidLoad() {
+    override func viewDidLoad() { // ui button setup
         
         calculationLabel.text = ""
         
-        for i in functionButtons{
+        for i in functionButtons{ 
             i.layer.cornerRadius = 40
         }
         
