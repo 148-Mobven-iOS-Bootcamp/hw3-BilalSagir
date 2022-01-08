@@ -62,7 +62,7 @@ class CalculatorBrain{
     func executePendingBinaryOperation(){
         if pending != nil{
             
-            historyLabel = pending!.firstOperand.clean + " " + pending!.operationB + " " + accumlator.clean. //update later
+            historyLabel = pending!.firstOperand.clean + " " + pending!.operationB + " " + accumlator.clean //update later
   
             accumlator = pending!.binaryFunction(pending!.firstOperand, accumlator)
             pending = nil
